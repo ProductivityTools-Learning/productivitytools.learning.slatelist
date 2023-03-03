@@ -11,9 +11,9 @@ import { Toolbar, Button, Icon } from './components'
 
 const LIST_TYPES = ['numbered-list', 'bulleted-list']
 const TEXT_ALIGN_TYPES = ['left', 'center', 'right', 'justify']
+
 const RichTextExample = () => {
     const renderElement = useCallback(props => <Element {...props} />, [])
-
     const editor = useMemo(() => withReact(createEditor()), [])
 
 
