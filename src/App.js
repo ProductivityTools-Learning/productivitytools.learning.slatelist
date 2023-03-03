@@ -19,7 +19,15 @@ function App() {
   return (
     <div className="App">
       <Slate editor={editor} value={initialValue} >
-        <Editable />
+        <Editable
+          onKeyDown={event => {
+            if (event.key == '&') {
+              event.preventDefault();
+              editor.insertText('and');
+            }
+            console.log(event.key)
+          }}
+        />
       </Slate>
     </div>
   );
