@@ -1,36 +1,11 @@
 import './App.css';
 
-import React, { useState } from 'react'
-import { createEditor } from 'slate';
-import { Slate, Editable, withReact } from 'slate-react'
+import PageExample from './Components/PageExample';
 
-const initialValue = [
-  {
-    type: 'paragraph',
-    children: [{ text: 'A line of text in a paragraph.' }],
-  },
-]
-
-function App() {
-
-
-  const [editor] = useState(() => withReact(createEditor()))
-
+const App = () => {
   return (
-    <div className="App">
-      <Slate editor={editor} value={initialValue} >
-        <Editable
-          onKeyDown={event => {
-            if (event.key == '&') {
-              event.preventDefault();
-              editor.insertText('and');
-            }
-            console.log(event.key)
-          }}
-        />
-      </Slate>
-    </div>
-  );
+    <PageExample />
+  )
 }
 
 export default App;
